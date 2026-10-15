@@ -16,6 +16,9 @@ public class ListaSimple{
 			Nodo t = new Nodo(valor);
 			Cabeza = t;
 
+		} else {
+			nuevo.setSig(cabeza);
+			cabeza = nuevo;
 		}
 	}
 
