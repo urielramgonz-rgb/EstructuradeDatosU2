@@ -10,26 +10,25 @@ public class ListaSimple{
 	public ListaSimple(){
 		this.cabeza = null;
 	}
+    	public void insertarAlInicio(int valor) {
+        	Nodo nuevo = new Nodo();
+        	nuevo.setValor(valor);
+        	nuevo.setSig(cabeza);
+        	cabeza = nuevo;
+    	}
 
-   	public void insertarAlInicio(int valor) {
-		if (cabeza == null){
-			Nodo t = new Nodo(valor);
-			Cabeza = t;
-
-		} else {
-			nuevo.setSig(cabeza);
-			cabeza = nuevo;
-		}
-	}
-
-    	public void recorrer() {
+       	public void recorrer() {
         Nodo actual = cabeza;
+        
+        if (actual == null) {
+            System.out.println("Lista vacía");
+            return;
+        }
 
-	while (actual != null) {
+        while (actual != null) {
             System.out.print("[" + actual.getValor() + "] -> ");
             actual = actual.getSig();
         }
         System.out.println("null");
-        
     }
 }
